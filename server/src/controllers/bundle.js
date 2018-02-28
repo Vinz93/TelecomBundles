@@ -1,15 +1,15 @@
 import httpStatus from 'http-status';
 
-import { paginate } from '../helpers/utils';
 import { APIError } from '../helpers/errors';
+import services from '../graph.js';
 
 const BundleController = {
   /**
    * @swagger
-   * /users:
+   * /bundles:
    *   get:
    *     tags:
-   *      - User
+   *      - Bundle
    *     description: Show all users
    *     produces:
    *       - application/json
@@ -26,13 +26,10 @@ const BundleController = {
    *         type: string
    *     responses:
    *       200:
-   *         description: return an array of users'
+   *         description: return an array of combinations'
    */
 
   async readAll(req, res) {
-    const offset = paginate.offset(req.query.offset);
-    const limit = paginate.limit(req.query.limit);
-
     const find = req.query.find || {};
     const sort = req.query.sort || {
       createdAt: 1,
@@ -41,7 +38,7 @@ const BundleController = {
     res.json({
       find,
       sort,
-    })
+    });
   },
 };
 

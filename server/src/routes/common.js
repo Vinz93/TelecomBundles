@@ -1,7 +1,7 @@
 import express from 'express';
 import validate from 'express-validation';
 
-import user from '../controllers/user';
+import bundle from '../controllers/bundle';
 import { catchErrors } from '../helpers/errors';
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -9,7 +9,7 @@ validate.options({
   allowUnknownBody: false,
 });
 
-router.route('/users')
-  .get(catchErrors(user.readAll));
+router.route('/bundles')
+  .get(catchErrors(bundle.readAll));
 
 export default router;
