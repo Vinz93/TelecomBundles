@@ -12,15 +12,20 @@ function printCombinations(combinations) {
   });
 }
 
-function allCombinations(vertex, stack) {
+function vertexCombination(vertex, stack) {
   let stackAux = [...stack, vertex.name];
   combinations = [...combinations, stackAux];
   for (const i in edges[vertex.id]) {
-    allCombinations(vertices[edges[vertex.id][i][0]], stackAux);
+    vertexCombination(vertices[edges[vertex.id][i][0]], stackAux);
   }
   stackAux = [...stack.slice(0, stack.lenght)];
 }
 
-allCombinations(vertices[3], []);
-
+// vertexCombination(vertices[3], []);
+function graphCombinations() {
+  vertices.forEach(vertice => {
+    vertexCombination(vertice, []);
+  });
+}
+graphCombinations();
 printCombinations(combinations);
