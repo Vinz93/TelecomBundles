@@ -1,13 +1,18 @@
 import graph from './graph';
+const { vertices, edges } = graph;
 
-function print(graph) {
-  const { vertices, edges } = graph;
-  const res = vertices.map(vertex => {
-    return `${vertex} ->`
-  })
-  console.log(this.vertices.map(function(vertex) {
-    return (vertex + ' -> ' + this.edges[vertex].join(', ')).trim();
-  }, this).join(' | '));
+const foo = function (a) {
+  console.log(a);
 };
 
-console.log(graph);
+function dfs(vertex, visited, fn) {
+  visited[vertex.id] = true;
+  if (edges[vertex.id]) fn(vertex.name);
+  for (const i in edges[vertex.id]) {
+    if (!visited[edges[vertex.id][i][0]]) {
+      dfs(vertices[edges[vertex.id][i][0]], visited, fn);
+    }
+  }
+}
+
+dfs(vertices[3], [], foo);
