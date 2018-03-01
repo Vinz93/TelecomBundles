@@ -1,18 +1,26 @@
 import graph from './graph';
 const { vertices, edges } = graph;
 
-const foo = function (a) {
-  console.log(a);
-};
+let combinations = [];
 
-function dfs(vertex, visited, fn) {
-  visited[vertex.id] = true;
-  if (edges[vertex.id]) fn(vertex.name);
-  for (const i in edges[vertex.id]) {
-    if (!visited[edges[vertex.id][i][0]]) {
-      dfs(vertices[edges[vertex.id][i][0]], visited, fn);
-    }
-  }
+function printCombinations(combinations) {
+  combinations.forEach((bundle, i) => {
+    console.log(`bundle ${i})
+    `);
+    console.log(bundle);
+    console.log(`========`);
+  });
 }
 
-dfs(vertices[3], [], foo);
+function allCombinations(vertex, stack) {
+  let stackAux = [...stack, vertex.name];
+  combinations = [...combinations, stackAux];
+  for (const i in edges[vertex.id]) {
+    allCombinations(vertices[edges[vertex.id][i][0]], stackAux);
+  }
+  stackAux = [...stack.slice(0, stack.lenght)];
+}
+
+allCombinations(vertices[3], []);
+
+printCombinations(combinations);
