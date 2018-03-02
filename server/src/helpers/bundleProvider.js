@@ -1,6 +1,3 @@
-import graph from '../graph';
-const { vertices, edges } = graph;
-
 class BundleProvider {
   constructor(vertices, edges) {
     this.vertices = vertices;
@@ -30,23 +27,18 @@ class BundleProvider {
     stackAux = [...stack.slice(0, stack.lenght)];
   }
 
-  graphCombinations() {
+  buildCombinations() {
     this.vertices.forEach(vertice => {
       this.vertexCombination(vertice, []);
     });
   }
-  printCombinations() {
-    this.combinations.forEach((bundle, i) => {
-      console.log(bundle);
-      console.log(`total = ${this.prices[i]}`);
-      console.log(`
-        `);
-    });
+
+  getCombinations() {
+    return this.combinations.map((plan, i) => ({
+      plan,
+      price: this.prices[i],
+    })).sort((a, b) => a.price - b.price);
   }
 }
-
-const trial = new BundleProvider(vertices, edges);
-trial.graphCombinations();
-trial.printCombinations();
 
 export default BundleProvider;
