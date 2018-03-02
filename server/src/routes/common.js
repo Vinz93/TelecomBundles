@@ -10,6 +10,6 @@ validate.options({
 });
 
 router.route('/bundles')
-  .get(catchErrors(bundle.readAll));
+  .get(catchErrors(bundle.getAll));
 
 export default router;

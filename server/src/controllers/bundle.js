@@ -1,7 +1,9 @@
 import httpStatus from 'http-status';
 
 import { APIError } from '../helpers/errors';
-import services from '../graph.js';
+import BundleProvider from '../helpers/bundleProvider';
+import graph from '../graph.js';
+const { vertices, edges } = graph;
 
 const BundleController = {
   /**
@@ -29,16 +31,11 @@ const BundleController = {
    *         description: return an array of combinations'
    */
 
-  async readAll(req, res) {
-    const find = req.query.find || {};
-    const sort = req.query.sort || {
-      createdAt: 1,
-    };
-
-    res.json({
-      find,
-      sort,
-    });
+  async getAll(req, res) {
+    const provider = new BundleProvider(vertices, edges);
+    provider.buildCombinations();
+    const response = provider.getCombinations();
+    return res.status(httpStatus.OK).json(response);
   },
 };
 
