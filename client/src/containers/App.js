@@ -2,12 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Footer from '../components/Footer';
+import BundleList from './BundleList.jsx';
 
 class App extends Component {
   render() {
     return (
       <div className="main-app-container">
         <div className="main-app-nav">Bundles combinations</div>
+        <BundleList />
         <Footer />
       </div>
     );
