@@ -1,7 +1,11 @@
-import { GET_BUNDLES } from '../constants/ActionTypes';
+import { FETCH_BUNDLES } from '../constants/ActionTypes';
+import * as bundlesAPI from '../api/bundles';
 
-export function getBundles() {
-  return {
-    type: GET_BUNDLES
-  };
-}
+export const fetchBundles = () => (dispatch, getState) => {
+  return bundlesAPI.fetchBundles().then(response => {
+    dispatch({
+      type: FETCH_BUNDLES,
+      payload: response,
+    });
+  });
+};

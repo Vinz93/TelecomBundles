@@ -1,1 +1,1 @@
-export const GET_BUNDLES = 'GET_BUNDLES';
+export const FETCH_BUNDLES = 'FETCH_BUNDLES';
