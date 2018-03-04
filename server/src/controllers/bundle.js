@@ -12,20 +12,9 @@ const BundleController = {
    *   get:
    *     tags:
    *      - Bundle
-   *     description: Show all users
+   *     description: Show all combinations from the bundle schema
    *     produces:
    *       - application/json
-   *     parameters:
-   *       - name: limit
-   *         description: pagination limit.
-   *         in: query
-   *         required: false
-   *         type: string
-   *       - name: offset
-   *         description: pagination offset.
-   *         in: query
-   *         required: false
-   *         type: string
    *     responses:
    *       200:
    *         description: return an array of combinations'

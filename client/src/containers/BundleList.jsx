@@ -9,9 +9,14 @@ class BundleList extends Component {
   fetch() {
   }
   render() {
+    const { bundles } = this.props;
+    const list = bundles.map(bundle => {
+      return <li>{bundle.price}</li>
+    })
     return (
       <div className="bundle-list">
         bundle list
+        {list}
       </div>
     );
   }
