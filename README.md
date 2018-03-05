@@ -1,4 +1,4 @@
-## Telecom Bundles
+# Telecom Bundles
 Stack `React-Redux` | `Node.js`.
 
 This application has a bundling schema's diagram that a service provider might
@@ -77,32 +77,32 @@ vertexCombination(vertex, stack) {
 }
 ```
 
-## Usage
+# Usage
 
-### Server
+## Server
 
-#### 1 Install dependencies
+### 1 Install dependencies
 ```
 $ cd TelecomBundles/server && yarn install
 ```
-#### 2 Start server
+### 2 Start server
 ```
 $ yarn start
 ```
 - The server is going to start in  http://localhost:3000/docs
 - Swagger docs starts in  http://localhost:3000/docs
-### Client
+## Client
 
-#### 3 Install dependencies
+### 3 Install dependencies
 ```
 $ cd TelecomBundles/client && yarn install
 ```
-#### 4 Start client
+### 4 Start client
 ```
 yarn start
 ```
 Client starts in http://localhost:3001
 
 
-### Author
+## Author
 Vincenzo Bianco
