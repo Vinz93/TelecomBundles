@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 
-$main-bg-color: #f1f2f0;
+$main-yellow: #ffff63;
+$black-hover: #222;
 $accent-blue: #37bbe4;
 $accent-gray: #e1e0dd;
 $accent-black: #35342f;
@@ -8,11 +10,19 @@ $accent-orange: #ec6b2d;
 $accent-red: #dd6464;
 
 body {
-  background-color: $main-bg-color;
+  background-color: $main-yellow;
   color: $accent-black;
   display: flex;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 .main-app-container {
@@ -20,8 +30,9 @@ body {
 }
 
 .main-app-nav {
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
+  font-weight: bold;
 }
 
 .counter-num-label {
@@ -77,4 +88,35 @@ footer {
   #heart{
     color: $accent-red;
   }
+}
+
+.bundle {
+  margin: 10px;
+  padding: 30px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  display: inline-block;
+
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.bundle:hover {
+    background-color: $black-hover;
+    color: $main-yellow;
+    transition: all 0.25s ease;
+}
+
+.plan {
+  padding: 24px 12px;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+}
+
+.service {
+  margin-bottom: 5px;
+  padding: 5px;
 }

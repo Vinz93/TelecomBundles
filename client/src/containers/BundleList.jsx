@@ -16,7 +16,7 @@ class BundleList extends Component {
   render() {
     const { bundles } = this.props;
     const list = bundles.map(({ plan, price }, i) => (
-      <li key={i}>
+      <li key={i} className="bundle">
         <Plan plan={plan}/>
         plan cost: {price}$
       </li>
