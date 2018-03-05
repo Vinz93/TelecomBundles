@@ -16,20 +16,11 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  bundles: PropTypes.number.isRequired
-};
-
 /**
  * Keep in mind that 'state' isn't the state of local object, but your single
  * state in this Redux application. 'bundles' is a property within our store/state
  * object. By mapping it to props, we can pass it to the child component Counter.
  */
-function mapStateToProps(state) {
-  return {
-    bundles: state.bundles
-  };
-}
 
 /**
  * Turns an object whose values are 'action creators' into an object with the same
@@ -49,4 +40,4 @@ function mapStateToProps(state) {
  * More info: https://github.com/rackt/react-redux
  */
 
-export default connect(mapStateToProps)(App);
+export default App;

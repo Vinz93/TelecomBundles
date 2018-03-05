@@ -1,20 +1,16 @@
 import React, { PropTypes } from 'react';
-const Plan = (props) => {
-  const { plan } = props;
-  const services = plan.map(service => {
-    const { name } = service;
+const Plan = ({ plan }) => {
+  const services = plan.map(({ name, id, price = 0 }) => {
     return (
-      <li className="service">
+      <li key={id} className="service">
         {name}
       </li>
     );
   });
   return (
-    <li className="plan">
-      <ul>
-        {services}
-      </ul>
-    </li>
+    <ul className="plan">
+      {services}
+    </ul>
   );
 };
 
