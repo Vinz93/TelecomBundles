@@ -1,7 +1,7 @@
 ## Telecom Bundles
 Stack `React-Redux` | `Node.js`.
 
-This application has a Diagram of a bundling schema that a service provider might
+This application has a bundling schema's diagram that a service provider might
 offer for a Broadband, TV, Landline. The Diagram is represented by the graph bellow.
 
 ```js
@@ -56,13 +56,13 @@ offer for a Broadband, TV, Landline. The Diagram is represented by the graph bel
     [[1, -10], [2, -40], [4, -20], [5, -10]],
     [[2, -30], [6, 15]],
     [],
-    []
+    [],
   ],
 };
 ```
-The graph is represented by an **Adjacency List**, with a finite set of vertices and  ordered pair of edge.
+The graph is represented by an **Adjacency List**, with a finite set of vertices and  ordered pair of edges.
 
-In order to get all possible combinations of the bundling schema, I wrote a custom Class which uses a Depth First Traversal with a modification (above function) to generate all combinations.
+In order to obtain all possible combinations of the bundling schema, I wrote a custom Class which uses a Depth First Traversal with a modification (bellow function) to generate all combinations.
 
 server/src/helpers/bundleProvider.js
 ```js
@@ -87,7 +87,7 @@ $ cd TelecomBundles/server && yarn install
 ```
 #### 2 Start server
 ```
-$ yarn dev
+$ yarn start
 ```
 - The server is going to start in  http://localhost:3000/docs
 - Swagger docs starts in  http://localhost:3000/docs
