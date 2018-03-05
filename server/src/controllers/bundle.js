@@ -1,6 +1,5 @@
 import httpStatus from 'http-status';
 
-import { APIError } from '../helpers/errors';
 import BundleProvider from '../helpers/bundleProvider';
 import graph from '../graph.js';
 const { vertices, edges } = graph;
