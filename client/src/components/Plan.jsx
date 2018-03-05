@@ -3,7 +3,7 @@ const Plan = ({ plan }) => {
   const services = plan.map(({ name, id, price = 0 }) => {
     return (
       <li key={id} className="service">
-        {name} ({price}$)
+        {name} <span className="currency">{price}$</span>
       </li>
     );
   });

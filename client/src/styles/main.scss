@@ -3,6 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Lora);
 
 $main-yellow: #ffff63;
+$detail-orange: #FFB500;
+$detail-green: #15B023;
 $black-hover: #222;
 $accent-blue: #37bbe4;
 $accent-gray: #e1e0dd;
@@ -103,16 +105,20 @@ footer {
   font-size: 22px;
 
   background-color: $black-hover;
-  color: $main-yellow;
+  color: $detail-orange;
 
   cursor: pointer;
   transition: all 0.4s ease;
 }
 
 .bundle:hover {
-    transform: scale(1.4);
+  transform: scale(1.4);
+  border-color:  $main-yellow;
 }
 
+.bundle:hover .currency{
+  color: $detail-green;
+}
 .plan {
   padding: 24px 12px;
   border-bottom: 1px solid;
